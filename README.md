@@ -8,7 +8,7 @@
   </h4>
 
 [![GitHub sets018](https://img.shields.io/badge/by-slrosales-green)](https://github.com/slrosales)
-[![GitHub jfbenitezz](https://img.shields.io/badge/by-fjbenitezz-purple)](https://github.com/fjbenitezz)
+[![GitHub jfbenitezz](https://img.shields.io/badge/by-jfbenitezz-purple)](https://github.com/jfbenitezz)
 [![GitHub FernandoMVG](https://img.shields.io/badge/by-FernandoMVG-blue)](https://github.com/FernandoMVG)
 
 </div>
