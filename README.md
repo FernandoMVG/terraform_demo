@@ -288,7 +288,6 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
     storage_account_uri = azurerm_storage_account.my_storage_account.primary_blob_endpoint
   }
 }
-
 ```
 
 El archivo `main.tf` es el archivo principal de configuración de Terraform. En este archivo, definimos los recursos que queremos crear en Azure. A continuación, se detallan los componentes principales del archivo `main.tf`:
@@ -299,7 +298,7 @@ El archivo `main.tf` es el archivo principal de configuración de Terraform. En 
 * `resource "azurerm_network_interface" "nic"`: Este bloque define una interfaz de red para la máquina virtual.
 * `resource "azurerm_public_ip" "public_ip"`: Este bloque define una dirección IP pública para la máquina virtual.
 * `resource "azurerm_network_security_group" "nsg"`: Este bloque define un grupo de seguridad de red para la máquina virtual.
-* `resource "azurerm_network_security_rule" "nsg_rule"`: Este bloque define una regla de seguridad de red para permitir el tráfico SSH (puerto 22).
+* `resource "azurerm_network_security_rule" "nsg_rule"`: Este bloque define una regla de seguridad de red para permitir el tráfico SSH (puerto 22) y HTTP (puerto 80).
 * `resource "azurerm_linux_virtual_machine" "vm"`: Este bloque define la máquina virtual Linux en Azure.
 
 4. Creamos el archivo `nano variables.tf`:
@@ -389,9 +388,7 @@ Para aprovisionar los recursos previamente definidos, en Azure.
 9. Para verificar que recursos se aprovisionaron, o bien puedes observarlo en la interfaz de azure en los grupos de recursos o ejecutar el siguiente comando:
 
 ```
-
 terraform state list
-
 ```
 
 10. Y para destruir la infraestructura, ejecuta el siguiente comando:
