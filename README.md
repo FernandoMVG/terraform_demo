@@ -317,11 +317,13 @@ variable "resource_group_location" {
 variable "resource_group_name_prefix" {
   type        = string
   default     = "rg"
-  description = "Prefix of the resource group name that's combined with a random>}
+  description = "Prefix of the resource group name that's combined with a random ID so name is unique in your Azure subscription."
+}
 
 variable "username" {
   type        = string
-  description = "The username for the local account that will be created on the >  default     = "azureadmin"
+  description = "The username for the local account that will be created on the new VM."
+  default     = "azureadmin"
 }
 
 ```
@@ -450,6 +452,7 @@ sudo nano index.html
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Bienvenido a Nginx</title>
 </head>
 <body>
@@ -457,6 +460,7 @@ sudo nano index.html
     <p>Esta es una página web simple servida por Nginx en una máquina virtual de Azure.</p>
 </body>
 </html>
+
 ```
 
 4. Guarda y cierra el archivo.
