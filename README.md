@@ -26,13 +26,11 @@ En esta demostración, desplegaremos una infraestructura en Azure utilizando arc
 ```
 sudo apt update
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
 ```
 2. Ejecuta el comando
 
 ```
 az --version
-
 ```
 y comprueba que se ha instalado correctamente
 
@@ -43,7 +41,6 @@ y comprueba que se ha instalado correctamente
 ```
 sudo apt update
 sudo snap install terraform --classic 
-
 ```
 2. Para comprobar que se ha instalado exitosamente puedes ejecutar el siguiente comando
 
@@ -75,7 +72,7 @@ az account set --subscription "<subscription_id_or_subscription_name>"
 
 ### Aprovisionamiento de la infraestructura en Azure
 
-1. Crearemos un archivo `provider.tf`:
+1. Crearemos un archivo `nano provider.tf`:
 
 ```
 terraform {
@@ -111,7 +108,7 @@ Este archivo:
    - random: Proveedor para generar valores aleatorios
 * Configura el proveedor azurerm con configuraciones básicas
 
-2. Ahora creamos otro archivo llamado `ssh.tf`:
+2. Ahora creamos otro archivo llamado `nano ssh.tf`:
 
 ```
 resource "random_pet" "ssh_key_name" {
@@ -150,7 +147,7 @@ El archivo `ssh.tf` gestiona la creación y configuración de las claves SSH:
 * Genera el par de claves (pública/privada) usando `azapi_resource_action`
 * Guarda la clave privada en un archivo local `generated_ssh_key.pem` con los permisos adecuados (0600) para poder conectarnos a la VM
 
-3. Creamos el archivo `main.tf`:
+3. Creamos el archivo `nano main.tf`:
 
 ```
 resource "random_pet" "rg_name" {
@@ -305,7 +302,7 @@ El archivo `main.tf` es el archivo principal de configuración de Terraform. En 
 * `resource "azurerm_network_security_rule" "nsg_rule"`: Este bloque define una regla de seguridad de red para permitir el tráfico SSH (puerto 22).
 * `resource "azurerm_linux_virtual_machine" "vm"`: Este bloque define la máquina virtual Linux en Azure.
 
-4. Creamos el archivo `variables.tf`:
+4. Creamos el archivo `nano variables.tf`:
 
 ```
 variable "resource_group_location" {
@@ -332,7 +329,7 @@ El archivo `variables.tf` define las variables que se utilizan en los archivos d
 * `variable "resource_group_name_prefix"`: Define el prefijo del nombre del grupo de recursos que se combinará con un valor aleatorio para crear un nombre único.
 * `variable "username"`: Define el nombre de usuario para la cuenta local que se creará en la máquina virtual. El valor predeterminado es "azureadmin".
 
-5. Y por último, creamos un archivo llamado `outputs.tf`:
+5. Y por último, creamos un archivo llamado `nano outputs.tf`:
 
 ```
 output "key_data" {
